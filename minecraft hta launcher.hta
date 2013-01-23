@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>My HTML application</title>
+<HTA:APPLICATION
+  APPLICATIONNAME="Minecraft Mini Launcher"
+  ID="minecraft hta"
+  VERSION="1.0"
+  ICON="ml.ico"/>
+</head>
+
+<script language="VBScript">
+
+Sub Window_OnLoad
+  'This method will be called when the application loads
+  'Add your code here
+End Sub
+
+</script>
+
+<body bgcolor="white">
+
+<!--Add your controls here-->
+
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<body>
+   <script type="text/javascript">
+function setName()
+ {
+ document.getElementById("intro").innerHTML = 
+    '<div class="info">' +
+   '<applet code="net.minecraft.Launcher" archive="https://s3.amazonaws.com/MinecraftDownload/launcher/MinecraftLauncher.jar?v=1326382442000" codebase="/game/" width="854" height="480">' + 
+	'<param name="separate_jvm" value="true"/>' +
+    '<param name="java_arguments" value="-Xmx1024M -Xms1024M -Dsun.java2d.noddraw=true -Dsun.awt.noerasebackground=true -Dsun.java2d.d3d=false -Dsun.java2d.opengl=false -Dsun.java2d.pmoffscreen=false">' +
+    '<param name="latestVersion" value="1326382442000">' +
+    '<param name="downloadTicket" value="0">' +
+    '<param name="sessionId" value="0">' +
+	'<param name="userName" value="' +
+	escape(document.getElementById("inputName").value) +
+	'"> </applet>';
+ }
+</script>
+<div id="intro">
+<applet code="net.minecraft.Launcher" archive="https://s3.amazonaws.com/MinecraftDownload/launcher/MinecraftLauncher.jar?v=1326382442000" codebase="/game/" width="854" height="480">
+        <param name="separate_jvm" value="true">
+        <param name="java_arguments" value="-Xmx1024M -Xms1024M -Dsun.java2d.noddraw=true -Dsun.awt.noerasebackground=true -Dsun.java2d.d3d=false -Dsun.java2d.opengl=false -Dsun.java2d.pmoffscreen=false">
+        <param name="userName" value="Player">
+        <param name="latestVersion" value="1326382442000">
+        <param name="downloadTicket" value="0">
+        <param name="sessionId" value="0">
+    </applet>
+</div>
+<center><input id="inputName" type="text" value="Username" maxlength="16"/>
+<input type="button" onclick="setName()" value="Set Username"/></center>
+
+</body>
+
+</html>
+
+
+<!--{{InsertControlsHere}}-Do not remove this line-->
+</body>
+</html>
